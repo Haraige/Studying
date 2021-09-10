@@ -1,0 +1,11 @@
+ua/org/code/App.class
+ua/org/code/persistence/entity/User.class
+ua/org/code/persistence/entity/Role.class
+ua/org/code/persistence/dao/UserDao.class
+ua/org/code/persistence/dao/RoleDao.class
+ua/org/code/persistence/dao/impl/JdbcRoleDao.class
+ua/org/code/persistence/dao/Dao.class
+ua/org/code/util/LoadProperties.class
+ua/org/code/persistence/dao/GenericJdbcDao.class
+ua/org/code/util/PooledDataSource.class
+ua/org/code/persistence/dao/impl/JdbcUserDao.class

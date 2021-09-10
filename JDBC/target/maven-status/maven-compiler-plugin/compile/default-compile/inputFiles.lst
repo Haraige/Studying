@@ -1,0 +1,11 @@
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/persistence/dao/GenericJdbcDao.java
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/persistence/dao/impl/JdbcUserDao.java
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/util/PooledDataSource.java
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/persistence/entity/Role.java
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/persistence/dao/UserDao.java
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/persistence/entity/User.java
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/App.java
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/persistence/dao/RoleDao.java
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/util/LoadProperties.java
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/persistence/dao/Dao.java
+/home/NIX/kharakhaichuk/Studying/JDBC/src/main/java/ua/org/code/persistence/dao/impl/JdbcRoleDao.java

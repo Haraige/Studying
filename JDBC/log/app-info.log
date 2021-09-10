@@ -1,0 +1,13 @@
+[INFO ] 2021-09-10 10:49:06.467 [main] App - App start
+[INFO ] 2021-09-10 10:49:54.822 [main] App - App start
+[INFO ] 2021-09-10 15:07:04.650 [main] App - App start
+[ERROR] 2021-09-10 15:07:04.828 [main] GenericJdbcDao - SQLState: 23505
+Error Code: 23505
+Message: Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.USER(ID) [1, 'user2', 'pass1', 'email2', 'firstName', 'lastName', DATE '1998-11-21', 1]"; SQL statement:
+insert into User (ID, LOGIN, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, BIRTHDAY, ROLE) values(?, ?, ?, ?, ?, ?, ?, ?) [23505-200]
+[INFO ] 2021-09-10 15:07:20.638 [main] App - App start
+[INFO ] 2021-09-10 16:45:44.483 [main] App - App start
+[INFO ] 2021-09-10 16:51:15.152 [main] App - App start
+[ERROR] 2021-09-10 17:24:45.556 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]

@@ -1,0 +1,126 @@
+[INFO ] 2021-09-09 10:25:21.100 [main] App - App start
+[INFO ] 2021-09-09 10:25:21.104 [main] App - Print roles
+[ERROR] 2021-09-09 10:25:21.190 [main] JdbcRoleDao - java.sql.SQLException: Cannot create PoolableConnectionFactory (Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-200])
+[INFO ] 2021-09-09 10:25:21.191 [main] App - Print users
+[ERROR] 2021-09-09 10:25:21.193 [main] JdbcUserDao - java.sql.SQLException: Cannot create PoolableConnectionFactory (Database may be already in use: null. Possible solutions: close all other connection(s); use the server mode [90020-200])
+[INFO ] 2021-09-09 10:25:32.362 [main] App - App start
+[INFO ] 2021-09-09 10:25:32.365 [main] App - Print roles
+[INFO ] 2021-09-09 10:25:32.558 [main] App - Print users
+[INFO ] 2021-09-09 10:28:12.559 [main] App - App start
+[INFO ] 2021-09-09 10:29:03.047 [main] App - App start
+[INFO ] 2021-09-09 11:04:28.721 [main] App - App start
+[INFO ] 2021-09-09 11:04:57.381 [main] App - App start
+[INFO ] 2021-09-09 11:05:05.607 [main] App - App start
+[INFO ] 2021-09-09 12:21:19.711 [main] App - App start
+[INFO ] 2021-09-09 12:38:44.423 [main] App - App start
+[INFO ] 2021-09-09 12:39:31.869 [main] App - App start
+[INFO ] 2021-09-09 12:40:31.300 [main] App - App start
+[INFO ] 2021-09-09 13:52:27.876 [main] App - App start
+[INFO ] 2021-09-09 13:52:50.690 [main] App - App start
+[INFO ] 2021-09-09 14:32:06.435 [main] App - App start
+[INFO ] 2021-09-09 14:32:18.682 [main] App - App start
+[INFO ] 2021-09-09 14:32:18.876 [main] App - App start
+[ERROR] 2021-09-09 14:32:18.893 [main] JdbcRoleDao - org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ROLES" not found; SQL statement:
+select * from roles where id=? [42102-200]
+[INFO ] 2021-09-09 14:32:22.980 [main] App - App start
+[ERROR] 2021-09-09 14:32:23.125 [main] JdbcRoleDao - org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "ROLES" not found; SQL statement:
+select * from roles where id=? [42102-200]
+[INFO ] 2021-09-09 14:32:56.839 [main] App - App start
+[ERROR] 2021-09-09 14:32:56.997 [main] JdbcRoleDao - org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-200]
+[INFO ] 2021-09-09 14:34:17.139 [main] App - App start
+[ERROR] 2021-09-09 14:34:17.320 [main] JdbcRoleDao - org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-200]
+[INFO ] 2021-09-09 14:34:34.510 [main] App - App start
+[INFO ] 2021-09-09 15:45:18.661 [main] App - App start
+[ERROR] 2021-09-09 15:45:18.831 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLSyntaxErrorException: Schema "UA" not found; SQL statement:
+insert into ua.org.code.persistence.entity.Role (ID, ID) values(?, ?) [90079-200]
+[INFO ] 2021-09-09 15:46:33.900 [main] App - App start
+[ERROR] 2021-09-09 15:46:34.056 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLSyntaxErrorException: Schema "UA" not found; SQL statement:
+insert into ua.org.code.persistence.entity.Role (ID, ID) values(?, ?) [90079-200]
+[INFO ] 2021-09-09 15:51:00.894 [main] App - App start
+[ERROR] 2021-09-09 15:51:01.057 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLSyntaxErrorException: Duplicate column name "ID"; SQL statement:
+insert into Role (ID, ID) values(?, ?) [42121-200]
+[INFO ] 2021-09-09 15:51:37.201 [main] App - App start
+[INFO ] 2021-09-09 15:52:30.437 [main] App - App start
+[INFO ] 2021-09-09 15:55:01.909 [main] App - App start
+[ERROR] 2021-09-09 15:55:02.092 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLDataException: Parameter "#8" is not set; SQL statement:
+insert into User (ID, LOGIN, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, BIRTHDAY, ROLE) values(?, ?, ?, ?, ?, ?, ?, ?) [90012-200]
+[INFO ] 2021-09-09 16:11:49.910 [main] App - App start
+[INFO ] 2021-09-09 16:13:38.403 [main] App - App start
+[INFO ] 2021-09-09 16:13:47.659 [main] App - App start
+[ERROR] 2021-09-09 16:13:47.846 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 16:20:31.480 [main] App - App start
+[ERROR] 2021-09-09 16:20:31.657 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.USER(ID) [1, 'user', 'pass', 'email', 'firstName', 'lastName', DATE '2002-07-07', 1]"; SQL statement:
+insert into User (ID, LOGIN, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, BIRTHDAY, ROLE) values(?, ?, ?, ?, ?, ?, ?, ?) [23505-200]
+[ERROR] 2021-09-09 16:20:31.664 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 16:22:05.500 [main] App - App start
+[INFO ] 2021-09-09 16:22:13.152 [main] App - App start
+[ERROR] 2021-09-09 16:22:13.354 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 17:01:15.443 [main] App - App start
+[ERROR] 2021-09-09 17:01:15.628 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 17:31:59.026 [main] App - App start
+[INFO ] 2021-09-09 17:32:09.384 [main] App - App start
+[ERROR] 2021-09-09 17:32:09.560 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 17:32:49.633 [main] App - App start
+[ERROR] 2021-09-09 17:32:49.799 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "UPDATE USER SET (ID, LOGIN, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, BIRTHDAY, ROLE) VALUES[*](?, ?, ?, ?, ?, ?, ?, ?) WHERE ID=?"; expected "="; SQL statement:
+update User set (ID, LOGIN, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, BIRTHDAY, ROLE) values(?, ?, ?, ?, ?, ?, ?, ?) where id=? [42001-200]
+[ERROR] 2021-09-09 17:32:49.814 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 17:38:38.060 [main] App - App start
+[ERROR] 2021-09-09 17:38:38.247 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLDataException: Parameter "#9" is not set; SQL statement:
+update User set ID=?, LOGIN=?, PASSWORD=?, EMAIL=?, FIRST_NAME=?, LAST_NAME=?, BIRTHDAY=?, ROLE=? where id=? [90012-200]
+[ERROR] 2021-09-09 17:38:38.252 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 17:39:54.455 [main] App - App start
+[ERROR] 2021-09-09 17:39:54.637 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLDataException: Parameter "#9" is not set; SQL statement:
+update User set ID=?, LOGIN=?, PASSWORD=?, EMAIL=?, FIRST_NAME=?, LAST_NAME=?, BIRTHDAY=?, ROLE=? where id=? [90012-200]
+[ERROR] 2021-09-09 17:39:54.642 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 17:41:40.049 [main] App - App start
+[ERROR] 2021-09-09 17:41:40.258 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 17:56:19.495 [main] App - App start
+[INFO ] 2021-09-09 17:56:31.146 [main] App - App start
+[INFO ] 2021-09-09 18:02:51.785 [main] App - App start
+[ERROR] 2021-09-09 18:02:51.971 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 18:13:50.330 [main] App - App start
+[ERROR] 2021-09-09 18:13:50.513 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 18:14:13.741 [main] App - App start
+[ERROR] 2021-09-09 18:14:13.918 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLDataException: Invalid value "0" for parameter "parameterIndex" [90008-200]
+[ERROR] 2021-09-09 18:14:13.926 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLDataException: Parameter "#8" is not set; SQL statement:
+insert into User (ID, LOGIN, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, BIRTHDAY, ROLE) values(?, ?, ?, ?, ?, ?, ?, ?) [90012-200]
+[ERROR] 2021-09-09 18:14:13.930 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 18:15:04.763 [main] App - App start
+[INFO ] 2021-09-09 18:15:24.918 [main] App - App start
+[ERROR] 2021-09-09 18:15:25.099 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 18:19:59.488 [main] App - App start
+[ERROR] 2021-09-09 18:19:59.675 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 18:26:44.573 [main] App - App start
+[INFO ] 2021-09-09 18:27:00.720 [main] App - App start
+[ERROR] 2021-09-09 18:27:00.899 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 18:34:54.813 [main] App - App start
+[ERROR] 2021-09-09 18:34:54.993 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 18:35:34.412 [main] App - App start
+[ERROR] 2021-09-09 18:35:34.598 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 18:36:41.059 [main] App - App start
+[ERROR] 2021-09-09 18:36:41.240 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLFeatureNotSupportedException: Feature not supported: "ua.org.code.persistence.entity.Role" [50100-200]
+[INFO ] 2021-09-09 19:02:41.570 [main] App - App start
+[INFO ] 2021-09-09 19:02:48.790 [main] App - App start
+[INFO ] 2021-09-09 19:07:11.629 [main] App - App start
+[ERROR] 2021-09-09 19:07:11.814 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLSyntaxErrorException: Table "USERS" not found; SQL statement:
+select * from users where id=? [42102-200]
+[INFO ] 2021-09-09 19:07:37.406 [main] App - App start
+[INFO ] 2021-09-09 19:10:13.765 [main] App - App start
+[INFO ] 2021-09-09 19:11:25.493 [main] App - App start
+[INFO ] 2021-09-09 19:12:48.442 [main] App - App start
+[ERROR] 2021-09-09 19:12:48.622 [main] JdbcRoleDao - org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-200]
+[ERROR] 2021-09-09 19:12:48.633 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-200]
+[ERROR] 2021-09-09 19:12:48.640 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-200]
+[INFO ] 2021-09-09 19:14:02.446 [main] App - App start
+[ERROR] 2021-09-09 19:14:02.599 [main] JdbcRoleDao - org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-200]
+[INFO ] 2021-09-09 19:14:33.051 [main] App - App start
+[ERROR] 2021-09-09 19:14:33.231 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: "PRIMARY KEY ON PUBLIC.ROLE(ID) [1, 'admin']"; SQL statement:
+insert into Role (ID, NAME) values(?, ?) [23505-200]
+[ERROR] 2021-09-09 19:14:33.240 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-200]
+[INFO ] 2021-09-09 19:14:51.624 [main] App - App start
+[ERROR] 2021-09-09 19:14:51.799 [main] JdbcUserDao - org.h2.jdbc.JdbcSQLNonTransientException: No data is available [2000-200]
+[INFO ] 2021-09-09 19:15:02.585 [main] App - App start
+[INFO ] 2021-09-09 19:15:27.593 [main] App - App start
+[INFO ] 2021-09-09 19:15:47.749 [main] App - App start
+[ERROR] 2021-09-09 19:15:47.938 [main] GenericJdbcDao - org.h2.jdbc.JdbcSQLIntegrityConstraintViolationException: Unique index or primary key violation: "PUBLIC.CONSTRAINT_INDEX_27 ON PUBLIC.USER(EMAIL) VALUES 4"; SQL statement:
+insert into User (ID, LOGIN, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, BIRTHDAY, ROLE) values(?, ?, ?, ?, ?, ?, ?, ?) [23505-200]

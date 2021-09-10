@@ -1,0 +1,8 @@
+<dataset>
+    <ROLE id='1' name='admin'/>
+    <ROLE id='2' name='user'/>
+    <USER id="1" login="peter" password="pass" email="peter@email.com" first_name="Peter" last_name="Debkin" birthday="2002-07-07" role="1"/>
+    <USER id="2" login="alice" password="pass" email="alice@email.com" first_name="Alice" last_name="Mandra" birthday="1978-03-15" role="2"/>
+</dataset>
+
+

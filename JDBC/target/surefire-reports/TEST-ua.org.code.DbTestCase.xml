@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<testsuite tests="1" failures="0" name="ua.org.code.DbTestCase" time="0.059" errors="1" skipped="0">
+  <properties>
+    <property name="idea.version" value="2021.2.1"/>
+    <property name="java.runtime.name" value="OpenJDK Runtime Environment"/>
+    <property name="java.vm.version" value="16.0.2+7-67"/>
+    <property name="sun.boot.library.path" value="/usr/lib/jvm/jdk-16.0.2/lib"/>
+    <property name="maven.multiModuleProjectDirectory" value="/home/NIX/kharakhaichuk/Studying/JDBC"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="java.vendor.url" value="https://java.oracle.com/"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="path.separator" value=":"/>
+    <property name="java.vm.name" value="OpenJDK 64-Bit Server VM"/>
+    <property name="user.country" value="US"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="/home/NIX/kharakhaichuk/Studying/JDBC"/>
+    <property name="java.vm.compressedOopsMode" value="Zero based"/>
+    <property name="java.runtime.version" value="16.0.2+7-67"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="/tmp"/>
+    <property name="line.separator" value="
+"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="os.name" value="Linux"/>
+    <property name="maven.ext.class.path" value="/snap/intellij-idea-community/320/plugins/maven/lib/maven-event-listener.jar"/>
+    <property name="classworlds.conf" value="/snap/intellij-idea-community/320/plugins/maven/lib/maven3/bin/m2.conf"/>
+    <property name="sun.jnu.encoding" value="UTF-8"/>
+    <property name="java.library.path" value="/usr/java/packages/lib:/usr/lib64:/lib64:/lib:/usr/lib"/>
+    <property name="maven.conf" value="/snap/intellij-idea-community/320/plugins/maven/lib/maven3/conf"/>
+    <property name="jdk.debug" value="release"/>
+    <property name="java.class.version" value="60.0"/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="5.11.0-34-generic"/>
+    <property name="user.home" value="/home/NIX/kharakhaichuk"/>
+    <property name="user.timezone" value="Europe/Kiev"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="java.specification.version" value="16"/>
+    <property name="user.name" value="kharakhaichuk"/>
+    <property name="java.class.path" value="/snap/intellij-idea-community/320/plugins/maven/lib/maven3/boot/plexus-classworlds-2.6.0.jar:/snap/intellij-idea-community/320/plugins/maven/lib/maven3/boot/plexus-classworlds.license"/>
+    <property name="java.vm.specification.version" value="16"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="sun.java.command" value="org.codehaus.classworlds.Launcher -Didea.version=2021.2.1 install"/>
+    <property name="java.home" value="/usr/lib/jvm/jdk-16.0.2"/>
+    <property name="user.language" value="en"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="java.vm.info" value="mixed mode, sharing"/>
+    <property name="java.version" value="16.0.2"/>
+    <property name="securerandom.source" value="file:/dev/./urandom"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="/snap/intellij-idea-community/320/plugins/maven/lib/maven3"/>
+    <property name="file.separator" value="/"/>
+    <property name="java.version.date" value="2021-07-20"/>
+    <property name="java.vendor.url.bug" value="https://bugreport.java.com/bugreport/"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.cpu.endian" value="little"/>
+  </properties>
+  <testcase classname="ua.org.code.DbTestCase" name="shouldListUsers" time="0.059">
+    <error message="Could not create dataset for test &apos;shouldListUsers&apos;." type="java.lang.RuntimeException">java.lang.RuntimeException: Could not create dataset for test &apos;shouldListUsers&apos;.
+	at com.github.database.rider.core.RiderRunner.runBeforeTest(RiderRunner.java:46)
+	at com.github.database.rider.core.DBUnitRule$1.evaluate(DBUnitRule.java:73)
+	at com.github.database.rider.core.util.EntityManagerProvider$1.evaluate(EntityManagerProvider.java:243)
+	at org.junit.rules.RunRules.evaluate(RunRules.java:20)
+	at org.junit.runners.ParentRunner.runLeaf(ParentRunner.java:325)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:78)
+	at org.junit.runners.BlockJUnit4ClassRunner.runChild(BlockJUnit4ClassRunner.java:57)
+	at org.junit.runners.ParentRunner$3.run(ParentRunner.java:290)
+	at org.junit.runners.ParentRunner$1.schedule(ParentRunner.java:71)
+	at org.junit.runners.ParentRunner.runChildren(ParentRunner.java:288)
+	at org.junit.runners.ParentRunner.access$000(ParentRunner.java:58)
+	at org.junit.runners.ParentRunner$2.evaluate(ParentRunner.java:268)
+	at org.junit.runners.ParentRunner.run(ParentRunner.java:363)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.execute(JUnit4Provider.java:252)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.executeTestSet(JUnit4Provider.java:141)
+	at org.apache.maven.surefire.junit4.JUnit4Provider.invoke(JUnit4Provider.java:112)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:78)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:567)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+Caused by: com.github.database.rider.core.exception.DataBaseSeedingException: Could not initialize dataset: dataset/users.yml
+	at com.github.database.rider.core.dataset.DataSetExecutorImpl.createDataSet(DataSetExecutorImpl.java:141)
+	at com.github.database.rider.core.RiderRunner.runBeforeTest(RiderRunner.java:44)
+	... 24 more
+Caused by: org.dbunit.dataset.DataSetException: Exception while searching the dependent tables.
+	at com.github.database.rider.core.api.dataset.RiderSequenceFilter.sortTableNames(RiderSequenceFilter.java:72)
+	at com.github.database.rider.core.api.dataset.RiderSequenceFilter.&lt;init&gt;(RiderSequenceFilter.java:34)
+	at com.github.database.rider.core.dataset.DataSetExecutorImpl.performSequenceFiltering(DataSetExecutorImpl.java:328)
+	at com.github.database.rider.core.dataset.DataSetExecutorImpl.createDataSet(DataSetExecutorImpl.java:128)
+	... 25 more
+Caused by: org.dbunit.util.search.SearchException: org.dbunit.dataset.NoSuchTableException: The table &apos;ROLE&apos; does not exist in schema &apos;null&apos;
+	at org.dbunit.database.search.AbstractMetaDataBasedSearchCallback.getNodes(AbstractMetaDataBasedSearchCallback.java:154)
+	at org.dbunit.database.search.AbstractMetaDataBasedSearchCallback.getNodesFromImportedKeys(AbstractMetaDataBasedSearchCallback.java:99)
+	at org.dbunit.database.search.ImportedKeysSearchCallback.getEdges(ImportedKeysSearchCallback.java:53)
+	at org.dbunit.util.search.DepthFirstSearch.reverseSearch(DepthFirstSearch.java:264)
+	at org.dbunit.util.search.DepthFirstSearch.search(DepthFirstSearch.java:148)
+	at org.dbunit.util.search.DepthFirstSearch.search(DepthFirstSearch.java:104)
+	at org.dbunit.database.search.TablesDependencyHelper.getDependentTables(TablesDependencyHelper.java:92)
+	at org.dbunit.database.search.TablesDependencyHelper.getDependentTables(TablesDependencyHelper.java:73)
+	at com.github.database.rider.core.api.dataset.RiderSequenceFilter.getDependencyInfo(RiderSequenceFilter.java:175)
+	at com.github.database.rider.core.api.dataset.RiderSequenceFilter.sortTableNames(RiderSequenceFilter.java:68)
+	... 28 more
+Caused by: org.dbunit.dataset.NoSuchTableException: The table &apos;ROLE&apos; does not exist in schema &apos;null&apos;
+	at org.dbunit.database.search.AbstractMetaDataBasedSearchCallback.getNodes(AbstractMetaDataBasedSearchCallback.java:186)
+	at org.dbunit.database.search.AbstractMetaDataBasedSearchCallback.getNodes(AbstractMetaDataBasedSearchCallback.java:149)
+	... 37 more
+</error>
+    <system-err>Sep 10, 2021 12:53:44 PM org.hibernate.annotations.common.Version &lt;clinit&gt;
+INFO: HCANN000001: Hibernate Commons Annotations {4.0.2.Final}
+Sep 10, 2021 12:53:44 PM org.hibernate.Version logVersion
+INFO: HHH000412: Hibernate Core {4.2.20.Final}
+Sep 10, 2021 12:53:44 PM org.hibernate.cfg.Environment &lt;clinit&gt;
+INFO: HHH000206: hibernate.properties not found
+Sep 10, 2021 12:53:44 PM org.hibernate.cfg.Environment buildBytecodeProvider
+INFO: HHH000021: Bytecode provider name : javassist
+Sep 10, 2021 12:53:44 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+WARN: HHH000402: Using Hibernate built-in connection pool (not for production use!)
+Sep 10, 2021 12:53:44 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000115: Hibernate connection pool size: 20
+Sep 10, 2021 12:53:44 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000006: Autocommit mode: true
+Sep 10, 2021 12:53:44 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000401: using driver [org.h2.Driver] at URL [jdbc:h2:mem:test;DB_CLOSE_DELAY=-1]
+Sep 10, 2021 12:53:44 PM org.hibernate.service.jdbc.connections.internal.DriverManagerConnectionProviderImpl configure
+INFO: HHH000046: Connection properties: {autocommit=true, release_mode=auto, user=se}
+Sep 10, 2021 12:53:44 PM org.hibernate.dialect.Dialect &lt;init&gt;
+INFO: HHH000400: Using dialect: org.hibernate.dialect.H2Dialect
+Sep 10, 2021 12:53:44 PM org.hibernate.engine.transaction.internal.TransactionFactoryInitiator initiateService
+INFO: HHH000268: Transaction strategy: org.hibernate.engine.transaction.internal.jdbc.JdbcTransactionFactory
+Sep 10, 2021 12:53:44 PM org.hibernate.hql.internal.ast.ASTQueryTranslatorFactory &lt;init&gt;
+INFO: HHH000397: Using ASTQueryTranslatorFactory
+412 [main] INFO org.dbunit.database.DatabaseConfig - The property ending with &apos;schema&apos; was not found. Please notify a dbunit developer to add the property to the class org.dbunit.database.DatabaseConfig
+412 [main] INFO org.dbunit.database.DatabaseConfig - The property ending with &apos;replacers&apos; was not found. Please notify a dbunit developer to add the property to the class org.dbunit.database.DatabaseConfig
+413 [main] INFO com.github.database.rider.core.dataset.DataSetExecutorImpl - DBUnit configuration for dataset executor &apos;default&apos;:cacheConnection: true
+cacheTableNames: true
+caseInsensitiveStrategy: UPPERCASE
+columnSensing: false
+leakHunter: false
+mergeDataSets: false
+mergingStrategy: METHOD
+disableSequenceFiltering: false
+alwaysCleanBefore: false
+alwaysCleanAfter: false
+raiseExceptionOnCleanUp: false
+disablePKCheckFor: com.github.database.rider.core.configuration.DBUnitConfig@4115b5d8
+schema: 
+tableType: [TABLE]
+allowEmptyFields: false
+fetchSize: 100
+qualifiedTableNames: false
+batchSize: 100
+batchedStatements: false
+caseSensitiveTableNames: false
+replacers: [com.github.database.rider.core.replacers.DateTimeReplacer@46e8a539, com.github.database.rider.core.replacers.UnixTimestampReplacer@495083a0, com.github.database.rider.core.replacers.NullReplacer@5fd62371]
+
+</system-err>
+  </testcase>
+</testsuite>
