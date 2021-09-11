@@ -1,8 +1,8 @@
 package ua.org.code.persistence.dao;
 
+import annotation.Table;
 import com.google.common.base.CaseFormat;
 import lombok.extern.log4j.Log4j2;
-import ua.org.code.util.PooledDataSource;
 
 import java.lang.reflect.Field;
 import java.sql.Connection;
@@ -24,7 +24,7 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
     public void create(E entity) {
         List<String> fieldsNames = fieldNamesToUnderscore(entity.getClass().getDeclaredFields());
         StringBuilder sql = new StringBuilder(
-                "insert into " + entity.getClass().getSimpleName() + " (");
+                "insert into " + getTableName(entity) + " (");
         for (int i = 0; i < fieldsNames.size() - 1; i++) {
             sql.append(fieldsNames.get(i)).append(", ");
         }
@@ -58,7 +58,6 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
     @Override
     public void update(E entity) {
         List<String> fieldsNames = fieldNamesToUnderscore(entity.getClass().getDeclaredFields());
-
         StringBuilder sql = new StringBuilder(
                 "update " + entity.getClass().getSimpleName() + " set ");
         for (int i = 0; i < fieldsNames.size() - 1; i++) {
@@ -121,6 +120,17 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
         return null;
     }
 
+    private String getTableName(E entity) {
+        Table tableAnnotation = entity.getClass().getDeclaredAnnotation(Table.class);
+        String tableName;
+        if (tableAnnotation == null) {
+            tableName = entity.getClass().getSimpleName();
+        } else {
+            tableName = tableAnnotation.name();
+        }
+        return tableName;
+    }
+
     private List<String> fieldNamesToUnderscore(Field[] fields) {
         List<String> fieldsNames = new ArrayList<>();
         Arrays.stream(fields).forEach(field -> {
@@ -177,6 +187,7 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
             case "Long" -> statement.setLong(index, (Long) value);
             case "String" -> statement.setString(index,
                     (String) value);
+            case "Double" -> statement.setDouble(index, (Double) value);
             case "Date" -> statement.setDate(index, (Date) value);
             default -> statement.setLong(index, getEntityId(value));
             }

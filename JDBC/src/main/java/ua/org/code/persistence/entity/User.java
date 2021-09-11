@@ -1,5 +1,6 @@
 package ua.org.code.persistence.entity;
 
+import annotation.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -11,6 +12,7 @@ import java.sql.Date;
 @Setter
 @NoArgsConstructor
 @AllArgsConstructor
+@Table(name = "users")
 public class User {
     Long id;
     String login;

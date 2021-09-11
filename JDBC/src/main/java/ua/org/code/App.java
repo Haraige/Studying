@@ -12,6 +12,14 @@ import java.sql.Date;
 @Log4j2
 public class App {
     public static void main(String[] args) {
+        JdbcRoleDao jdbcRoleDao = new JdbcRoleDao(PooledDataSource.getConnection());
 
+        Role role = new Role(
+                5L,
+                "user"
+        );
+
+        jdbcRoleDao.create(role);
+        jdbcRoleDao.findAll().forEach(System.out::println);
     }
 }

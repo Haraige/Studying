@@ -1,9 +1,9 @@
-CREATE TABLE IF NOT EXISTS Role (
+CREATE TABLE IF NOT EXISTS ROLES (
     id INT PRIMARY KEY,
     name VARCHAR(50)
 );
 
-CREATE TABLE IF NOT EXISTS User (
+CREATE TABLE IF NOT EXISTS USERS (
     id INT PRIMARY KEY,
     login VARCHAR(50) unique not null,
     password varchar(50) not null,
