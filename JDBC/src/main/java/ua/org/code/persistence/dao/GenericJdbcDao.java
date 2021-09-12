@@ -16,15 +16,17 @@ import java.util.List;
 @Log4j2
 public abstract class GenericJdbcDao<E> implements Dao<E> {
     protected Connection connection;
-    public GenericJdbcDao(Connection connection) {
+    private final Class<E> type;
+    public GenericJdbcDao(Connection connection, Class<E> type) {
         this.connection = connection;
+        this.type = type;
     }
 
     @Override
     public void create(E entity) {
         List<String> fieldsNames = fieldNamesToUnderscore(entity.getClass().getDeclaredFields());
         StringBuilder sql = new StringBuilder(
-                "insert into " + getTableName(entity) + " (");
+                "insert into " + getTableName(type) + " (");
         for (int i = 0; i < fieldsNames.size() - 1; i++) {
             sql.append(fieldsNames.get(i)).append(", ");
         }
@@ -32,7 +34,7 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
         sql.append("?, ".repeat(Math.max(0, fieldsNames.size() - 1)));
         sql.append("?)");
 
-        List<Class<?>> entityTypes = getEntityFieldsClasses(entity);
+        List<Class<?>> entityTypes = getEntityFieldsClasses(type);
         List<Object> entityValues = getEntityFieldsValues(entity);
 
         try (PreparedStatement createStatement = connection.prepareStatement(sql.toString())) {
@@ -43,6 +45,7 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
                         entityValues.get(i));
             }
             createStatement.execute();
+            connection.commit();
         } catch(SQLException e) {
             logSqlError(e);
             try {
@@ -59,14 +62,14 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
     public void update(E entity) {
         List<String> fieldsNames = fieldNamesToUnderscore(entity.getClass().getDeclaredFields());
         StringBuilder sql = new StringBuilder(
-                "update " + entity.getClass().getSimpleName() + " set ");
+                "update " + getTableName(type) + " set ");
         for (int i = 0; i < fieldsNames.size() - 1; i++) {
             sql.append(fieldsNames.get(i)).append("=?, ");
         }
         sql.append(fieldsNames.get(fieldsNames.size() - 1)).append("=? ");
         sql.append("where id=?");
 
-        List<Class<?>> entityTypes = getEntityFieldsClasses(entity);
+        List<Class<?>> entityTypes = getEntityFieldsClasses(type);
         List<Object> entityValues = getEntityFieldsValues(entity);
 
         try (PreparedStatement updateStatement = connection.prepareStatement(sql.toString())) {
@@ -78,6 +81,7 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
             }
             updateStatement.setLong(fieldsNames.size() + 1, getEntityId(entity));
             updateStatement.execute();
+            connection.commit();
         } catch(SQLException e) {
             logSqlError(e);
             try {
@@ -93,7 +97,7 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
     public void remove(E entity) {
         List<String> fieldsNames = fieldNamesToUnderscore(entity.getClass().getDeclaredFields());
         StringBuilder sql = new StringBuilder(
-                "delete from " + entity.getClass().getSimpleName() + " where id=? ");
+                "delete from " + getTableName(type) + " where id=? ");
         try (PreparedStatement removeStatement = connection.prepareStatement(sql.toString())) {
             connection.setAutoCommit(false);
             removeStatement.setLong(1, getEntityId(entity));
@@ -110,21 +114,29 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
         }
     }
 
-    @Override
+    /*@Override
     public List<E> findAll() {
+        List<String> fieldsNames = fieldNamesToUnderscore(type.getDeclaredFields());
+        StringBuilder sql = new StringBuilder("select * from ").append(getTableName(type));
+        List<Class<?>> entityTypes = getEntityFieldsClasses(type);
+        try {
+            connection.setAutoCommit(false);
+            Statement findAllStatement = connection.createStatement();
+            findAllStatement.execute(sql.toString());
+            ResultSet findAllResultSet = findAllStatement.getResultSet();
+            type.getDeclaredConstructor(entityTypes)
+        } catch (SQLException e) {
+            logSqlError(e);
+            throw new RuntimeException(e);
+        }
         return null;
-    }
+    }*/
 
-    @Override
-    public E findById(Long id) {
-        return null;
-    }
-
-    private String getTableName(E entity) {
-        Table tableAnnotation = entity.getClass().getDeclaredAnnotation(Table.class);
+    private String getTableName(Class<?> type) {
+        Table tableAnnotation = type.getDeclaredAnnotation(Table.class);
         String tableName;
         if (tableAnnotation == null) {
-            tableName = entity.getClass().getSimpleName();
+            tableName = type.getSimpleName();
         } else {
             tableName = tableAnnotation.name();
         }
@@ -141,15 +153,15 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
         return fieldsNames;
     }
 
-    private List<Class<?>> getEntityFieldsClasses(Object entity) {
+    private List<Class<?>> getEntityFieldsClasses(Class<?> type) {
         List<Class<?>> entityFieldsClasses = new ArrayList<>();
-        for (Field field: entity.getClass().getDeclaredFields()) {
+        for (Field field: type.getDeclaredFields()) {
             entityFieldsClasses.add(field.getType());
         }
         return entityFieldsClasses;
     }
 
-    private List<Object> getEntityFieldsValues(Object entity) {
+    private List<Object> getEntityFieldsValues(E entity) {
         List<Object> entityFieldsValues = new ArrayList<>();
         for (Field field: entity.getClass().getDeclaredFields()) {
             field.setAccessible(true);
@@ -179,17 +191,20 @@ public abstract class GenericJdbcDao<E> implements Dao<E> {
         return id;
     }
 
-    private void setStatementValue(PreparedStatement statement, int index, Class<?> valueType, Object value) {
+    private void setStatementValue(PreparedStatement statement,
+                                   int index,
+                                   Class<?> valueType,
+                                   Object value) {
         try {
             switch (valueType.getSimpleName()) {
-            case "Integer" -> statement.setInt(index,
-                    (Integer) value);
-            case "Long" -> statement.setLong(index, (Long) value);
-            case "String" -> statement.setString(index,
-                    (String) value);
-            case "Double" -> statement.setDouble(index, (Double) value);
-            case "Date" -> statement.setDate(index, (Date) value);
-            default -> statement.setLong(index, getEntityId(value));
+                case "Integer" -> statement.setInt(index,
+                        (Integer) value);
+                case "Long" -> statement.setLong(index, (Long) value);
+                case "String" -> statement.setString(index,
+                        (String) value);
+                case "Double" -> statement.setDouble(index, (Double) value);
+                case "Date" -> statement.setDate(index, (Date) value);
+                default -> statement.setLong(index, getEntityId(value));
             }
         } catch (SQLException e) {
             log.error(e);

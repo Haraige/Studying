@@ -1,3 +1,3 @@
 <dataset>
-    <USER id="2" login="liza" password="pass" email="alice@email.com" first_name="Alice" last_name="Mandra" birthday="1978-03-15" role="2"/>
+    <USERS id="3" login="denis" password="pass" email="denis@email.com" first_name="Denis" last_name="Red" birthday="2000-10-11" role="2"/>
 </dataset>

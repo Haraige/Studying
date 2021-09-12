@@ -3,24 +3,19 @@ package ua.org.code.persistence.dao.impl;
 import lombok.extern.log4j.Log4j2;
 import ua.org.code.persistence.dao.GenericJdbcDao;
 import ua.org.code.persistence.dao.UserDao;
-import ua.org.code.persistence.entity.Role;
 import ua.org.code.persistence.entity.User;
-import ua.org.code.util.PooledDataSource;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 @Log4j2
 public class JdbcUserDao extends GenericJdbcDao<User> implements UserDao {
-    private final JdbcRoleDao jdbcRoleDao = new JdbcRoleDao(PooledDataSource.getConnection());
+    private final JdbcRoleDao jdbcRoleDao;
 
     public JdbcUserDao(Connection connection) {
-        super(connection);
+        super(connection, User.class);
+        this.jdbcRoleDao = new JdbcRoleDao(connection);
     }
 
     @Override
@@ -28,7 +23,7 @@ public class JdbcUserDao extends GenericJdbcDao<User> implements UserDao {
         List<User> users = new ArrayList<>();
         try {
             Statement getAllUsersStatement = connection.createStatement();
-            getAllUsersStatement.execute("select * from User");
+            getAllUsersStatement.execute("select * from users");
             ResultSet getAllUsersResultSet = getAllUsersStatement.getResultSet();
             while (getAllUsersResultSet.next()) {
                 User user = new User(
@@ -42,6 +37,7 @@ public class JdbcUserDao extends GenericJdbcDao<User> implements UserDao {
                         jdbcRoleDao.findById(getAllUsersResultSet.getLong(8)));
                 users.add(user);
             }
+            connection.commit();
         } catch (SQLException e) {
             logSqlError(e);
             try {
@@ -58,16 +54,14 @@ public class JdbcUserDao extends GenericJdbcDao<User> implements UserDao {
     public User findById(Long id) {
         User user = new User();
         try (PreparedStatement findUserByIdStatement = connection.prepareStatement(
-                     "select * from User where id=?")) {
+                     "select * from users where id=?")) {
             findUserByIdStatement.setMaxRows(1);
             findUserByIdStatement.setLong(1, id);
-            findUserByIdStatement.execute();
+            if (!findUserByIdStatement.execute()) {
+                throw new RuntimeException("No user with current id!");
+            }
 
             ResultSet resultSet = findUserByIdStatement.getResultSet();
-            if (resultSet.wasNull()) {
-                log.warn("No user with id {}", id);
-                return new User();
-            }
             resultSet.next();
             user.setId(id);
             user.setLogin(resultSet.getString(2));
@@ -77,6 +71,7 @@ public class JdbcUserDao extends GenericJdbcDao<User> implements UserDao {
             user.setLastName(resultSet.getString(6));
             user.setBirthday(resultSet.getDate(7));
             user.setRole(jdbcRoleDao.findById(resultSet.getLong(8)));
+            connection.commit();
         } catch (SQLException e) {
             logSqlError(e);
             try {
@@ -93,16 +88,14 @@ public class JdbcUserDao extends GenericJdbcDao<User> implements UserDao {
     public User findByLogin(String login) {
         User user = new User();
         try (PreparedStatement findUserByIdStatement = connection.prepareStatement(
-                "select * from User where login=?")) {
+                "select * from users where login=?")) {
             findUserByIdStatement.setMaxRows(1);
             findUserByIdStatement.setString(1, login);
-            findUserByIdStatement.execute();
+            if (!findUserByIdStatement.execute()) {
+                throw new RuntimeException("No user with current login!");
+            }
 
             ResultSet resultSet = findUserByIdStatement.getResultSet();
-            if (resultSet.wasNull()) {
-                log.warn("No user with login {}", login);
-                return new User();
-            }
             resultSet.next();
             user.setId(resultSet.getLong(1));
             user.setLogin(resultSet.getString(2));
@@ -112,6 +105,7 @@ public class JdbcUserDao extends GenericJdbcDao<User> implements UserDao {
             user.setLastName(resultSet.getString(6));
             user.setBirthday(resultSet.getDate(7));
             user.setRole(jdbcRoleDao.findById(resultSet.getLong(8)));
+            connection.commit();
         } catch (SQLException e) {
             logSqlError(e);
             try {
@@ -128,16 +122,14 @@ public class JdbcUserDao extends GenericJdbcDao<User> implements UserDao {
     public User findByEmail(String email) {
         User user = new User();
         try (PreparedStatement findUserByIdStatement = connection.prepareStatement(
-                "select * from User where email=?")) {
+                "select * from users where email=?")) {
             findUserByIdStatement.setMaxRows(1);
             findUserByIdStatement.setString(1, email);
-            findUserByIdStatement.execute();
+            if (!findUserByIdStatement.execute()) {
+                throw new RuntimeException("No user with current email!");
+            }
 
             ResultSet resultSet = findUserByIdStatement.getResultSet();
-            if (resultSet.wasNull()) {
-                log.warn("No user with login {}", email);
-                return new User();
-            }
             resultSet.next();
             user.setId(resultSet.getLong(1));
             user.setLogin(resultSet.getString(2));
@@ -147,6 +139,7 @@ public class JdbcUserDao extends GenericJdbcDao<User> implements UserDao {
             user.setLastName(resultSet.getString(6));
             user.setBirthday(resultSet.getDate(7));
             user.setRole(jdbcRoleDao.findById(resultSet.getLong(8)));
+            connection.commit();
         } catch (SQLException e) {
             logSqlError(e);
             try {

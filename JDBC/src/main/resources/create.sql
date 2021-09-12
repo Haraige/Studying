@@ -12,5 +12,5 @@ CREATE TABLE IF NOT EXISTS USERS (
     last_name varchar(50) not null,
     birthday date not null,
     role INT NOT NULL,
-    FOREIGN KEY (role) REFERENCES role(id)
+    FOREIGN KEY (role) REFERENCES roles(id)
 );

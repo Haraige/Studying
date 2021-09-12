@@ -2,3 +2,222 @@
 Error Code: 42102
 Message: Table "ROLES" not found; SQL statement:
 insert into roles (ID, NAME) values(?, ?) [42102-200]
+[ERROR] 2021-09-12 12:41:26.029 [main] GenericJdbcDao - SQLState: 42S02
+Error Code: 42102
+Message: Table "ROLES" not found; SQL statement:
+insert into roles (ID, NAME) values(?, ?) [42102-200]
+[ERROR] 2021-09-12 12:41:26.201 [main] GenericJdbcDao - SQLState: 42S02
+Error Code: 42102
+Message: Table "USERS" not found; SQL statement:
+select * from users where id=? [42102-200]
+[ERROR] 2021-09-12 12:41:26.331 [main] GenericJdbcDao - SQLState: 42S02
+Error Code: 42102
+Message: Table "ROLES" not found; SQL statement:
+select * from roles where id=? [42102-200]
+[ERROR] 2021-09-12 12:41:26.360 [main] GenericJdbcDao - SQLState: 42S02
+Error Code: 42102
+Message: Table "ROLES" not found; SQL statement:
+select * from roles where id=? [42102-200]
+[ERROR] 2021-09-12 12:49:06.251 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 12:51:16.181 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 12:53:23.619 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 12:54:11.365 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 12:55:45.415 [main] GenericJdbcDao - SQLState: 23506
+Error Code: 23506
+Message: Referential integrity constraint violation: "CONSTRAINT_4D495: PUBLIC.USERS FOREIGN KEY(ROLE) REFERENCES PUBLIC.ROLE(ID) (6)"; SQL statement:
+insert into users (ID, LOGIN, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, BIRTHDAY, ROLE) values(?, ?, ?, ?, ?, ?, ?, ?) [23506-200]
+[ERROR] 2021-09-12 12:57:22.544 [main] GenericJdbcDao - SQLState: 23506
+Error Code: 23506
+Message: Referential integrity constraint violation: "CONSTRAINT_4D495: PUBLIC.USERS FOREIGN KEY(ROLE) REFERENCES PUBLIC.ROLE(ID) (6)"; SQL statement:
+insert into users (ID, LOGIN, PASSWORD, EMAIL, FIRST_NAME, LAST_NAME, BIRTHDAY, ROLE) values(?, ?, ?, ?, ?, ?, ?, ?) [23506-200]
+[ERROR] 2021-09-12 13:03:09.693 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 13:03:43.055 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 13:03:56.697 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 13:04:40.257 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 17:33:12.338 [main] GenericJdbcDao - SQLState: 23503
+Error Code: 23503
+Message: Referential integrity constraint violation: "CONSTRAINT_4D495: PUBLIC.USERS FOREIGN KEY(ROLE) REFERENCES PUBLIC.ROLES(ID) (1)"; SQL statement:
+delete from roles where id=?  [23503-200]
+[ERROR] 2021-09-12 17:34:55.441 [main] GenericJdbcDao - SQLState: 23503
+Error Code: 23503
+Message: Referential integrity constraint violation: "CONSTRAINT_4D495: PUBLIC.USERS FOREIGN KEY(ROLE) REFERENCES PUBLIC.ROLES(ID) (5)"; SQL statement:
+delete from roles where id=?  [23503-200]
+[ERROR] 2021-09-12 17:39:27.509 [main] GenericJdbcDao - SQLState: 23503
+Error Code: 23503
+Message: Referential integrity constraint violation: "CONSTRAINT_4D495: PUBLIC.USERS FOREIGN KEY(ROLE) REFERENCES PUBLIC.ROLES(ID) (5)"; SQL statement:
+delete from roles where id=?  [23503-200]
+[ERROR] 2021-09-12 18:09:00.742 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:09:25.463 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:17:58.024 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:17:58.065 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:17:58.096 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:17:58.154 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:17:58.181 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:17:58.206 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:17:58.228 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:17:58.252 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:17:58.276 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:17:58.297 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:18:15.887 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:18:15.943 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:18:15.983 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:18:16.043 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:18:16.070 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:18:16.096 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:18:16.120 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:18:16.148 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:18:16.178 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:18:16.203 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:21:25.689 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:06.326 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:06.369 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:06.405 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:06.468 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:06.497 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:06.526 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:06.552 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:06.578 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:06.605 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:06.630 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:54.820 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:54.864 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:54.898 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:54.963 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:54.992 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:55.020 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:55.047 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:55.073 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:55.100 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:22:55.123 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:23:55.908 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:23:55.952 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:23:55.989 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:23:56.059 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:23:56.097 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:23:56.129 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:23:56.158 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:23:56.185 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:23:56.210 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
+[ERROR] 2021-09-12 18:23:56.235 [main] GenericJdbcDao - SQLState: 02000
+Error Code: 2000
+Message: No data is available [2000-200]
